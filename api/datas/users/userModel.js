@@ -1,8 +1,8 @@
 const db = require("../dbConfig");
 
-function add(user) {
+function add(data) {
   return db("user")
-    .insert(user, "id")
+    .insert(data, "id")
     .then(log => {
       const [id] = log;
       return findById(id);
